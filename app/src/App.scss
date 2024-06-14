@@ -1,0 +1,15 @@
+@import 'styles/_variables.scss';
+@import 'styles/_mixins.scss';
+@import 'styles/_reset.scss';
+
+body {
+	font-size: $font-size-base;
+	font-family: $font-family-base;
+	line-height: $line-height-base;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	@include container;
+}
