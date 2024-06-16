@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import './Header.scss'
 
@@ -26,7 +29,7 @@ const Header: React.FC = () => {
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside)
 		}
-	}, [isMenuOpen, isSubMenuOpen])
+	}, [])
 
 	return (
 		<section className='header__container container'>
@@ -45,9 +48,16 @@ const Header: React.FC = () => {
 							<Link to='/'>Home</Link>
 						</li>
 						<li className='characters-menu'>
-							<span onClick={toggleSubMenu}>Characters</span>
+							<span onClick={toggleSubMenu}>
+								Characters&nbsp;
+								<FontAwesomeIcon
+									icon={isSubMenuOpen ? faAngleUp : faAngleDown}
+								/>
+							</span>
 							<div
-								className={`characters-submenu ${isSubMenuOpen ? 'open' : ''}`}
+								className={`characters-submenu ${
+									isSubMenuOpen ? 'header__nav__submenu--open' : ''
+								}`}
 							>
 								<Link to='/characters/anime'>Anime</Link>
 								<div className={'submenu__divider'}></div>
