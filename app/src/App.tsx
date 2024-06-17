@@ -1,6 +1,7 @@
 import './App.scss'
 import React from 'react'
 import Header from './components/Header/Header'
+import Hero from './components/Hero/Hero'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -8,11 +9,8 @@ function App() {
 		<Router>
 			<Header />
 			<main>
-				<Routes>
-					{/* <Route path='/' element={<Home />} />
-						<Route path='/about' element={<About />} />
-						<Route path='/contact' element={<Contact />} /> */}
-				</Routes>
+				<Hero />
+				<Routes>{/* <Route path='/' element={<Hero />} /> */}</Routes>
 			</main>
 		</Router>
 	)

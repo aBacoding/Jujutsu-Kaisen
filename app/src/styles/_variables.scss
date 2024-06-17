@@ -14,3 +14,11 @@ $spacing-unit: 1rem;
 $spacing-header: 26px;
 $spacing-unit-half: 0.5rem;
 $spacing-unit-double: 2rem;
+
+// Fonts
+$font-path: '../../public/font/Qetod.ttf';
+
+@font-face {
+	font-family: 'Qetod';
+	src: url(#{$font-path}) format('truetype');
+}

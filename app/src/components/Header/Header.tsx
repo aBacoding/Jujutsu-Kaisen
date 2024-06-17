@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 	}, [])
 
 	return (
-		<section className='header__container container'>
+		<div className={'header__container container'}>
 			<header className='header'>
 				<div className='header__logo'>
 					<Link to='/'>
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
 					<div className='burger__line'></div>
 				</div>
 			</header>
-		</section>
+		</div>
 	)
 }
 
