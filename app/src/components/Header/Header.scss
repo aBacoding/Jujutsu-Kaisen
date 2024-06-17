@@ -100,6 +100,11 @@
 		li {
 			margin-left: $spacing-header;
 
+			&.active > a,
+			&.active > span {
+				font-weight: bold;
+			}
+
 			a {
 				text-decoration: none;
 				color: rgb(0, 0, 0);
@@ -110,6 +115,10 @@
 				&:hover {
 					color: #8b8b8b;
 					transform: scale(1.1);
+				}
+
+				&.active {
+					font-weight: bold;
 				}
 			}
 		}
@@ -175,6 +184,10 @@
 			&:hover {
 				color: #8b8b8b;
 				transform: none;
+			}
+
+			&.active {
+				font-weight: bold;
 			}
 		}
 	}

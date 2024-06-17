@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './Header.scss'
 
 const Header: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
 	const menuRef = useRef<HTMLDivElement>(null)
+	const location = useLocation()
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen)
@@ -44,10 +45,14 @@ const Header: React.FC = () => {
 					className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}
 				>
 					<ul>
-						<li>
+						<li className={location.pathname === '/' ? 'active' : ''}>
 							<Link to='/'>Home</Link>
 						</li>
-						<li className='characters-menu'>
+						<li
+							className={`characters-menu ${
+								location.pathname.startsWith('/characters') ? 'active' : ''
+							}`}
+						>
 							<span onClick={toggleSubMenu}>
 								Characters&nbsp;
 								<FontAwesomeIcon
@@ -59,15 +64,29 @@ const Header: React.FC = () => {
 									isSubMenuOpen ? 'header__nav__submenu--open' : ''
 								}`}
 							>
-								<Link to='/characters/anime'>Anime</Link>
+								<Link
+									to='/characters/anime'
+									className={
+										location.pathname === '/characters/anime' ? 'active' : ''
+									}
+								>
+									Anime
+								</Link>
 								<div className={'submenu__divider'}></div>
-								<Link to='/characters/manga'>Manga</Link>
+								<Link
+									to='/characters/manga'
+									className={
+										location.pathname === '/characters/manga' ? 'active' : ''
+									}
+								>
+									Manga
+								</Link>
 							</div>
 						</li>
-						<li>
+						<li className={location.pathname === '/manga' ? 'active' : ''}>
 							<Link to='/manga'>Manga</Link>
 						</li>
-						<li>
+						<li className={location.pathname === '/news' ? 'active' : ''}>
 							<Link to='/news'>News</Link>
 						</li>
 					</ul>

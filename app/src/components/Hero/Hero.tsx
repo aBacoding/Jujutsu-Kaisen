@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
 						</p>
 					</div>
 					<div className='hero__right'>
-						<img src='../../../image/gojo_hero.png' alt='Gojo Jujutsu Kaisen' />
+						<img src='../../../image/sukuna_hero.png' alt='Ryomen Sukuna' />
 					</div>
 				</div>
 			</div>
