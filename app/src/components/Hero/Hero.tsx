@@ -3,7 +3,7 @@ import './Hero.scss'
 const Hero: React.FC = () => {
 	return (
 		<section className='hero'>
-			<div className='hero__container container'>
+			<div className={'hero__container container'}>
 				<div className='hero__content'>
 					<div className='hero__left'>
 						<h1 className='hero__title'>Jujutsu Kaisen</h1>

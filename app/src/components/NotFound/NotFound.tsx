@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const NotFound: React.FC = () => {
 	return (
 		<section className='not-found'>
-			<div className='not-found__container container'>
+			<div className={'not-found__container container'}>
 				<div className='not-found__content'>
 					<img
 						className='not-found__title'

@@ -90,7 +90,9 @@ const Header: React.FC = () => {
 							<Link to='/news'>News</Link>
 						</li>
 					</ul>
-					<button className='header__btn'>Watch Now</button>
+					<Link to='/watch'>
+						<button className='header__btn'>Watch Now</button>
+					</Link>
 				</nav>
 				<div className='burger' onClick={toggleMenu}>
 					<div className='burger__line'></div>
